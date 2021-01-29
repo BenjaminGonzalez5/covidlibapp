@@ -1,5 +1,7 @@
 package covidlibapp.covidlibapp;
 
+import org.apache.commons.math3.distribution.NormalDistribution;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -34,5 +36,17 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+    
+    /*
+     * Test Chance en moyenne
+     * */
+    public void testCovidChanceEnMoyenne() {
+    	NormalDistribution normalDistribution = new NormalDistribution(5, 5);
+    	COVIDLib test = new COVIDLib();
+    	
+    	double maMoyenne = test.covidChanceEnMoyenne(normalDistribution, 5);
+    	
+    	assertEquals(maMoyenne, 0.5);
     }
 }
