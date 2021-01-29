@@ -49,4 +49,16 @@ public class AppTest
     	
     	assertEquals(maMoyenne, 0.5);
     }
+    
+    /*
+     * Test Chance durée
+     * */
+    public void testCovidChanceDurree() {
+    	NormalDistribution normalDistribution = new NormalDistribution(5, 5);
+    	COVIDLib test = new COVIDLib();
+    	
+    	double maMoyenne = test.covidChanceDurree(normalDistribution, 5, 5);
+    	
+    	assertEquals(maMoyenne, 0.0);
+    }
 }
